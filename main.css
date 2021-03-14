@@ -1,0 +1,65 @@
+header {
+    background-color: green;
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+h1 {
+    font-size: 50px;
+    color: white;
+    font-family: fantasy;
+}
+
+body {
+    background-color: black;
+    color: white; 
+
+}
+
+img {
+    height: 100px;
+}
+
+#all-characters {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: auto;
+    padding-inline-start: 0px;
+    justify-content: space-between;
+
+}
+p {
+        text-align: center;
+}
+#photo-display {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.photo-img {
+    height: 150px;
+    margin: auto;
+}
+
+#character-info {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+
+#character-info h3 {
+    font-size: 25px;
+}
+
+#character-info img {
+    height: 300px;
+}
