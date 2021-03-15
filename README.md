@@ -26,7 +26,7 @@ See an app video [here](https://www.youtube.com/watch?v=bGyZYHU3cJ0)
 This **burp** app should have (in order of placement in the HTML):
 - A title tag that starts with the text "Szechuan Sauce"
 - A header tag. Make it mean and make it green. 
-- Inside the header an `h1` that reads "Rick & Morty"
+- Inside the header an `h1` that reads "Rick & Morty" with fantasy font.
 - Inside the header an image of Rick and Morty (check your assets folder!)
 
 - A `ul` with the id `all-characters` that contains an `li`'s with an image (id=`photo-img`) of each character in the API (first page only), as well as the characters name.
