@@ -6,6 +6,7 @@ header {
     margin: auto;
     margin-bottom: 20px;
     align-items: center;
+    height: 150px;
 }
 
 h1 {
@@ -113,4 +114,16 @@ form {
 
 li {
     text-align: left;
+}
+
+@media only screen and (max-width: 1150px) {
+    main {
+        background-color: red;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form {
+        width: fit-content;
+    }
 }
