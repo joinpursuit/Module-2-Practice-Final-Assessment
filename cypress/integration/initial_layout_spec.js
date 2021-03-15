@@ -54,5 +54,8 @@ describe("Initial Layout", () => {
   it("has a no starting main area", () => {
     cy.get("main").should("not.visible");
   });
+  it("has a starting title that reads Szechuan Sauce", () => {
+    cy.get("title").contains("Szechuan Sauce");
+  });
 
 });

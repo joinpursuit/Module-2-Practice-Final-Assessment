@@ -16,6 +16,10 @@ describe("Core interaction", () => {
       );
   });
 
+  it("should update the title to be the selected character", () => {
+    cy.get("title").contains("Albert Einstein")
+  })
+
     it("has a form with a text input and a submit input after character selection", () => {
       cy.get("form > input").then((inputs) => {
         expect([...inputs].map((i) => i.type)).to.have.members([
