@@ -36,11 +36,11 @@ This **burp** app should have (in order of placement in the HTML):
 - Inside of `character-comments-section` should be a `form`, including a "text" `input` and a "submit" `input`, that allows users to submit (not save, just add to the frontend) what they would say about the character Jerry. On submission the input should clear.
 - Also insider `character-comments-section`  should be a `ul` with the id `character-comments-ul` that contains the submitted comments of each character.
 
-Please feel free to include additional `sections`s and elements if they make styling the **burp** app easier.
+Please feel free to include additional `section`s and elements if they make styling the **burp** app easier.
 
 The user should be able to:
 
-- Side scroll through the ``all-characters` ul and click on a character. When they select a character, the `main` should appear and information about that character (name, image, status, location name) should populate in the `character-info` section. When they click on a different character, this information should be replaced. The page `title` should also match the name of the character selected. 
+- Side scroll through the `all-characters` ul and click on a character. When they select a character, the `main` should appear and information about that character (name, image, status, location name) should populate in the `character-info` section. When they click on a different character, this information should be replaced. The page `title` should also match the name of the character selected. 
 - Use the `form`, to submit a character comment. Each comment should be a new `li` inside of `character-comments-ul`, with the selected character's name (in bold) and a comment (not bold).
 
 ## Styling
