@@ -8,13 +8,27 @@ describe("Core interaction", () => {
     cy.contains("Albert Einstein").should("exist");
     cy.contains("Dead").should("exist");
     cy.contains("Earth (Replacement Dimension)").should("exist");
-        cy.get("#character-info > img")
-          .should("have.attr", "src")
-          .should(
-            "include",
-            "https://rickandmortyapi.com/api/character/avatar/11.jpeg"
-          );
+    cy.get("#character-info > img")
+      .should("have.attr", "src")
+      .should(
+        "include",
+        "https://rickandmortyapi.com/api/character/avatar/11.jpeg"
+      );
   });
+
+    it("has a form with a text input and a submit input after character selection", () => {
+      cy.get("form > input").then((inputs) => {
+        expect([...inputs].map((i) => i.type)).to.have.members([
+          "text",
+          "submit",
+        ]);
+      });
+    });
+
+    it("has an empty character-comments-ul", () => {
+      cy.get("#character-comments-ul").should("exist");
+      cy.get("#character-comments-ul").children().should("have.length", 0);
+    });
 
   it("Enter a comment that displays on the page", () => {
     cy.get('form > input[type="text"]')
@@ -50,22 +64,22 @@ describe("Core interaction", () => {
         "https://rickandmortyapi.com/api/character/avatar/3.jpeg"
       );
   });
-    it("has character-info section include correct count of children", () => {
-      cy.get("#character-info").children().should("have.length", 4);
-    });
-    it("has main include correct count of children", () => {
-      cy.get("main").children().should("have.length", 2);
-    });
+  it("has character-info section include correct count of children", () => {
+    cy.get("#character-info").children().should("have.length", 4);
+  });
+  it("has main include correct count of children", () => {
+    cy.get("main").children().should("have.length", 2);
+  });
 
-    it("still shows previous comments", () => {
-     cy.get("#character-comments-ul")
-       .children()
-       .then((items) => {
-         const actual = items[0].innerHTML;
-         const titlePattern = /.*(<strong>|<b>)Albert Einstein.+(<\/strong>|<\/b>).*/g;
-         const descriptionPattern = /Jerry you are very lame/g;
-         expect(actual).to.match(titlePattern);
-         expect(actual).to.match(descriptionPattern);
-       });
-    });
+  it("still shows previous comments", () => {
+    cy.get("#character-comments-ul")
+      .children()
+      .then((items) => {
+        const actual = items[0].innerHTML;
+        const titlePattern = /.*(<strong>|<b>)Albert Einstein.+(<\/strong>|<\/b>).*/g;
+        const descriptionPattern = /Jerry you are very lame/g;
+        expect(actual).to.match(titlePattern);
+        expect(actual).to.match(descriptionPattern);
+      });
+  });
 });
