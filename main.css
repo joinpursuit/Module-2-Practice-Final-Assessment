@@ -27,12 +27,17 @@ img {
 #all-characters {
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
     width: 70%;
     margin: auto;
     padding-inline-start: 0px;
     justify-content: space-between;
+    overflow-x: scroll;
 
+}
+
+
+#all-characters:hover {
+    cursor: pointer;
 }
 p {
         text-align: center;
@@ -51,9 +56,10 @@ p {
 }
 
 #character-info {
-    width: 60%;
+    width: 50%;
     margin: auto;
     text-align: center;
+    height: fit-content;
 }
 
 #character-info h3 {
@@ -62,4 +68,49 @@ p {
 
 #character-info img {
     height: 300px;
+}
+#character-comments-section {
+    width: 50%;
+    margin: auto;
+    margin-top: 15px;
+    text-align: center;
+}
+
+#character-comments-ul {
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+label {
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+input[type="text"] {
+    width: 380px;
+}
+
+input[type="submit"] {
+    width: 160px;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+main {
+    border: 5px solid white;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: auto;
+    display: none;
+}
+
+form {
+    padding-right: 55px;
+}
+
+li {
+    text-align: left;
 }

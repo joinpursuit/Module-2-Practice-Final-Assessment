@@ -9,7 +9,7 @@ const getCharacters = () => {
     .then((res) => {
       const characters = res.results;
       console.log(characters);
-      characters.slice(0, 12).forEach((character) => {
+      characters.forEach((character) => {
         const li = document.createElement("li");
         li.classList.add("photo-display");
         li.style.width = "150px";
@@ -38,8 +38,10 @@ allChars.addEventListener("click", (e) => {
         return res.json();
     })
     .then((res) => {
-        const info = document.querySelector("#character-info");
-        info.style.border = "5px solid white";
+        const main = document.querySelector("main");
+        main.style.display = "flex"
+        const title = document.querySelector("title");
+        title.textContent = res.name;
         const name = document.querySelector("#character-name");
         const species = document.querySelector("#character-species");
         const location = document.querySelector("#character-location");
@@ -52,3 +54,15 @@ allChars.addEventListener("click", (e) => {
     })
     .catch((err) => console.log(err));
 });
+
+const form = document.querySelector("form"); 
+form.addEventListener("submit", (e) => {
+    e.preventDefault(); 
+    const comments = document.querySelector("#character-comments-ul");
+    const input = document.querySelector("input[type=text]")
+    const title = document.querySelector("title");
+    const li = document.createElement("li"); 
+    li.innerHTML = `<b>${title.textContent}: </b>${input.value}`; 
+    comments.appendChild(li);
+    input.value = ""
+})
