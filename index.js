@@ -62,7 +62,7 @@ form.addEventListener("submit", (e) => {
     const input = document.querySelector("input[type=text]")
     const title = document.querySelector("title");
     const li = document.createElement("li"); 
-    li.innerHTML = `<b>${title.textContent}: </b>${input.value}`; 
+    li.innerHTML = `<b>${title.textContent}:</b> ${input.value}`; 
     comments.appendChild(li);
     input.value = ""
 })

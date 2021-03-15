@@ -1,0 +1,15 @@
+{
+  "name": "pursuit-core-module2-practice-assessment",
+  "version": "1.0.0",
+  "description": "Module 2 Practice Assement with Rick and Morty",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "author": "Corey Ladovsky",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^6.7.0"
+  }
+}
