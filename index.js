@@ -32,37 +32,36 @@ const getCharacters = () => {
 getCharacters();
 
 allChars.addEventListener("click", (e) => {
-    fetch(`https://rickandmortyapi.com/api/character/${e.target.value}`)
+  fetch(`https://rickandmortyapi.com/api/character/${e.target.value}`)
     .then((res) => {
-        if (!res.ok) throw Error("Err:" + res.status);
-        return res.json();
+      if (!res.ok) throw Error("Err:" + res.status);
+      return res.json();
     })
     .then((res) => {
-        const main = document.querySelector("main");
-        main.style.display = "flex"
-        const title = document.querySelector("title");
-        title.textContent = res.name;
-        const name = document.querySelector("#character-name");
-        const species = document.querySelector("#character-species");
-        const location = document.querySelector("#character-location");
-        const img = document.querySelector("#character-img");
-        name.textContent = res.name; 
-        species.innerHTML = `<b>Status:</b> ${res.status}`;
-        location.innerHTML = `<b>Location:</b> ${res.location.name}`; 
-        img.src = res.image;
-
+      const main = document.querySelector("main");
+      main.style.display = "flex";
+      const title = document.querySelector("title");
+      title.textContent = res.name;
+      const name = document.querySelector("#character-name");
+      const species = document.querySelector("#character-species");
+      const location = document.querySelector("#character-location");
+      const img = document.querySelector("#character-img");
+      name.textContent = res.name;
+      species.innerHTML = `<b>Status:</b> ${res.status}`;
+      location.innerHTML = `<b>Location:</b> ${res.location.name}`;
+      img.src = res.image;
     })
     .catch((err) => console.log(err));
 });
 
-const form = document.querySelector("form"); 
+const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
-    e.preventDefault(); 
-    const comments = document.querySelector("#character-comments-ul");
-    const input = document.querySelector("input[type=text]")
-    const title = document.querySelector("title");
-    const li = document.createElement("li"); 
-    li.innerHTML = `<b>${title.textContent}:</b> ${input.value}`; 
-    comments.appendChild(li);
-    input.value = ""
-})
+  e.preventDefault();
+  const comments = document.querySelector("#character-comments-ul");
+  const input = document.querySelector("input[type=text]");
+  const title = document.querySelector("title");
+  const li = document.createElement("li");
+  li.innerHTML = `<b>${title.textContent}:</b> ${input.value}`;
+  comments.appendChild(li);
+  input.value = "";
+});
