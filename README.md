@@ -21,7 +21,7 @@
 
 Wubba lubba dub dub!!! Create an out of this world app using the [Rick And Morty API](https://rickandmortyapi.com/)! Your **burp** app should allow users to view characters and write what each character would say about Jerry. PS Nobody likes Jerry! 
 
-See an app video [here](https://www.youtube.com/watch?v=bGyZYHU3cJ0)
+See an app video [here](https://www.youtube.com/watch?v=bGyZYHU3cJ0) and can be played with [here](https://joinpursuit.github.io/Module-2-Practice-Final-Assessment/)
 
 This **burp** app should have (in order of placement in the HTML):
 - A title tag that starts with the text "Szechuan Sauce"
