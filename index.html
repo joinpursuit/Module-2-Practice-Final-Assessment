@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="./rickMorty.js" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="./rickMorty.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" type="image/png" href="./assets/favicon.jpeg"/>
+    <!-- <link rel="icon" type="image/png" href="./assets/favicon.jpeg"/> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+<title>"Szechuan Sauce"</title>
+    <header>
+        <h1>Rick & Morty</h1>
+    <img src="./assets/rickAndMorty.png" alt=""> 
+    </header>
+
+
+<ul id="all-characters"></ul>
+
+
+
+
+
+
+
+
+
 </body>
+
+<main>
+    <section id="character-info">
+        <h3></h3>
+        <img src="" alt="" id="show-image">
+        <p id='status'></p>
+        <p id='location-name'></p>
+    </section>
+    <section id="character-comments-section">
+        <form action="" id="form">
+            <label for=""></label><br>
+            <input type="text" id='input' required><br>
+            <input type="submit" id='subButton' value="Comment">
+
+        </form>
+       <ul id="character-comments-ul">   
+       </ul>
+    </section>
+</main>
 </html>

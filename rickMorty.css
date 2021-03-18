@@ -1,0 +1,111 @@
+body{
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+header{
+  background-color: green;
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  margin: auto;
+  margin-bottom: 20px;
+  align-items: center;
+  height: 200px;
+  font-family: fantasy;
+}
+h1{
+  font-size: 70px;
+  /* padding-left: 5%; */
+}
+header>img{
+width: 130px;
+height: 130px;
+}
+#all-characters{
+  list-style: none;
+  display: flex;
+  width: 70%;
+  margin: auto;
+  padding-inline-start: 0px;
+  justify-content: space-between;
+  overflow-x: scroll;
+  /* margin-left: 15%;  */
+  /* height: 160px; */
+  /* padding: 3px; */
+}
+/* #character-comments-ul{
+  font-size: 40px;
+  
+
+} */
+figcaption{
+  background-color: black;
+  text-align: center;
+  color:white;
+  font-size: 28px;
+  margin-top: 14px;
+}
+
+main{
+visibility: hidden;
+background-color: black;
+display: flex;
+width: 70%;
+margin-left: 15%;
+justify-content: space-around;
+color:white;
+border: solid white 4px;
+}
+
+label{
+  font-size: 33px;
+
+}
+
+h3{
+  font-weight: bold;
+  font-size: 38px;
+}
+#liComment{
+  font-weight: bold;
+  font-size: 38px;
+}
+
+form{
+  margin-top: 10%;
+  text-align: center;
+  color:white;
+}
+#status,#location-name{
+  font-size: 24px;
+}
+#subButton{
+
+  height: 30px;
+  font-size: 18px;
+  width:70% ;
+}
+
+#character-comments-section{
+  width: 40%;
+}
+#input{
+  width:90%;
+  height: 30px;
+  margin-top: 8px;
+  font-size: 28px;
+}
+
+#character-comments-ul{
+
+  font-size: 25px;
+font-family: sans-serif;
+}
+
+
+
+.li-class-comments{
+  text-align: left;
+}

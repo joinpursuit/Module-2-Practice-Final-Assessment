@@ -60,7 +60,7 @@ Your website should be responsive and work on screens of different sizes.
   - Image should have a height of 100px.
   - Header should have a margin of 20 pixels on the bottom.
   - Header background color should be `green`.
-- **Main Area**
+- **Main Area**'
   - Main area should contain all other content on the page.
   - Width: 70 percent.
   - Content should be oriented in a row
