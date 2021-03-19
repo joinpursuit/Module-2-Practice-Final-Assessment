@@ -1,0 +1,12 @@
+body {
+    background-color: black;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    background-color: green;
+    font-family: fantasy;
+}
+
