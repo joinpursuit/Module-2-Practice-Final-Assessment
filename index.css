@@ -1,12 +1,17 @@
-/* body {
+body {
     background-color: black;
-} */
+}
 
-/* header {
+header {
     display: flex;
     justify-content: space-between;
     color: white;
-    background-color: green;
+    height: 150px;
+    background-color: rgb(0, 128, 0);
     font-family: fantasy;
-} */
+}
+
+header > img {
+    height: 100px;
+}
 
