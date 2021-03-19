@@ -34,7 +34,7 @@ fetch("https://rickandmortyapi.com/api/character?page=1")
         const li = document.createElement("li");
         const img = document.createElement("img");
         li.textContent = char["name"]; // display name
-        img.textContent = char["image"]; // display image
+        img.src = char["image"]; // display image
         ul.appendChild(li);
         li.appendChild(img);
     })
