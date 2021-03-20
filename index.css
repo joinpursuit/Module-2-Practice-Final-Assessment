@@ -1,9 +1,19 @@
-/* header {
+body {
+    background-color: black;
+}
+
+
+    header {
     background-color: green;
-} */
+    width: 70%;
+    height: 150px;
+}
 
 h1 {
    font-family: fantasy;
    color: black;
-   /* background-color: green; */
+}
+
+img {
+    height: 100px;
 }
