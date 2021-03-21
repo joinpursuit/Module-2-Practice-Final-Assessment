@@ -1,0 +1,55 @@
+body {
+  font-family: "Pangolin", cursive;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: green;
+  width: 70%;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: white;
+  font-size: 65px;
+}
+
+header img {
+  height: 140px;
+}
+
+main {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  visibility: hidden;
+  background-color: red;
+  border: 6px solid white;
+  flex-direction: column;
+  align-items: center;
+  height: 600px;
+  width: 500px;
+}
+
+section {
+  width: 70%;
+}
+
+p {
+  color: white;
+}
+
+ul {
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
+}
