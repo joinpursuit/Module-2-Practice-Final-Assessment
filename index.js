@@ -5,6 +5,8 @@ const image = document.querySelector("#character-image");
 const status = document.querySelector("#character-status");
 const place = document.querySelector("#character-location");
 const title = document.querySelector("title")
+const form = document.querySelector("form");
+const comments = document.querySelector("#character-comments-ul")
 
 const getAllCharacters = async () => {
   try {
@@ -43,3 +45,12 @@ allCharacters.addEventListener("click", async (e) => {
   place.innerHTML = `<b>Location</b>${res.data.location.name}`;
   title.innerText = res.data.name;
 });
+
+form.addEventListener("submit", (e)=> {
+  e.preventDefault();
+  const comment = document.querySelector("#comment").value;
+  const li = document.createElement("li");
+  li.innerHTML = `<b>${title.textContent}:</b> ${comment}`;
+  comments.appendChild(li);
+  // console.log(comment);
+})
