@@ -1,11 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" type="image/png" href="./assets/favicon.jpeg"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" href="./assets/favicon.jpeg" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link rel="stylesheet" href="./style.css" />
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="./app.js" defer></script>
+		<title>Szechuan Sauce</title>
+	</head>
+	<body>
+		<header>
+			<h1>Rick & Morty</h1>
+			<img src="./assets/rickAndMorty.png" alt="Rick & Morty" />
+		</header>
+
+		<section>
+			<ul id="all-characters">
+				<!-- <li id="photo-img">
+					<img src="" alt="" />
+					<p id="character-name"></p>
+				</li> -->
+			</ul>
+		</section>
+
+		<main>
+				<form>
+                    <!-- <p>What would this character say about Jerry? </p> -->
+					<input type="text" name="" id="user-text" />
+					<input type="submit" value="Comment" />
+				</form>
+
+				<ul id="character-comments-ul">
+					<!-- APPEND THE USER'S COMMENTS HERE -->
+				</ul>
+		</main>
+
+		<!-- create using javascript -->
+		<!-- <main> ==> RED BOX WITH WHITE BORDER, DISPLAY FLEX, FLEX DIRECTION COLUMN
+    <section id="character-info">
+        <h3>CHARACTER'S NAME</h3>
+        <img src="" alt="">
+        <p> Status: Alive</p>
+        <p>Location: Earth (blah blah blah) </p>
+    </section> -->
+
+		<!-- **- - - - CHARACTER COMMENTS - - - -** -->
+		<!-- <section id="character-comments-section">
+        <form action=""> -->
+		<!-- USER ENTERS THEIR COMMENTS HERE -->
+		<!-- <input type="text" name="" id=""> -->
+		<!-- USER SUBMITS COMMENTS WITH THIS BUTTON -->
+		<!-- do not save the user's comment -->
+		<!-- <input type="submit" value="Comment"> -->
+		<!-- On submission the input should clear -->
+		<!-- </form>
+
+        <ul id="character-comments-ul"> -->
+		<!-- APPEND THE USER'S COMMENTS HERE -->
+		<!-- </ul>
+    </section>
+
+</main>  -->
+	</body>
 </html>
+
+<!-- 
+<body>
+		<header>
+			<h1>Rick & Morty</h1>
+			<img src="./assets/rickAndMorty.png" alt="Rick & Morty" />
+		</header>
+
+        <ul id="character-comments-ul">
+
+            <main>
+            <section id="character-info">
+        <h3 id="character-name">CHARACTER'S NAME</h3>
+        <img id="character-img" src="" alt="">
+        <p> Status: Alive</p>
+        <p>Location: Earth (blah blah blah) </p>
+    </section>
+    </main>
+
+    </body>
+ -->
