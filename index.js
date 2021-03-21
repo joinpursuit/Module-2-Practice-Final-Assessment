@@ -1,9 +1,3 @@
-const body = document.querySelector("body");
-const ul = document.querySelector("ul");
-const main = document.createElement("main");
-body.appendChild(main);
-
-
 fetch("https://rickandmortyapi.com/api/character?page=1")
   .then((res) => {
     if (!res.ok) {
@@ -12,7 +6,9 @@ fetch("https://rickandmortyapi.com/api/character?page=1")
     return res.json();
   })
   .then((res) => {
+    // debugger
     res.results.forEach((char) => {
+      const ul = document.querySelector("ul");
       const li = document.createElement("li");
       const img = document.createElement("img");
       li.textContent = char["name"]; // display name
@@ -25,4 +21,14 @@ fetch("https://rickandmortyapi.com/api/character?page=1")
     console.log(err);
   });
 
+const body = document.querySelector("body");
 
+const displayMain = (event) => {
+  const main = document.createElement("main");
+  body.appendChild(main);
+  // debugger
+};
+
+body.addEventListener("click", displayMain);
+
+// event.currentTarget.childNodes[9]
