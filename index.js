@@ -1,75 +1,45 @@
-// click on a character.
-// When they select a character, the `main` should appear and information about that
-// character (name, image, status, location name) should populate in the `character-info` section.
-// When they click on a different character, this information should be replaced.
-// The page `title` should also match the name of the character selected.
-// Use the `form`, to submit a character comment. Each comment should be a new `li` inside of
-// `character-comments-ul`, with the selected character's name (in bold) and a comment (not bold).
+const allCharacters = document.querySelector("#all-characters");
+const main = document.querySelector("main");
+const name = document.querySelector("#character-name");
+const image = document.querySelector("#character-image");
+const status = document.querySelector("#character-status");
+const place = document.querySelector("#character-location");
+const title = document.querySelector("title")
 
-const ul = document.querySelector("ul");
-const name = document.querySelector("#name");
-const picture = document.querySelector("#picture");
-const charStatus = document.querySelector("#status");
-const charLocation = document.querySelector("#location");
+const getAllCharacters = async () => {
+  try {
+    const res = await axios.get("https://rickandmortyapi.com/api/character");
+    // console.log(res);
+    res.data.results.forEach((character) => {
+      const li = document.createElement("li");
+      const img = document.createElement("img");
+      const p = document.createElement("p");
+      // console.log(character);
 
-const displayAllCharacters = (res) => {
-  res.results.forEach((char) => {
-    const li = document.createElement("li");
-    const img = document.createElement("img");
-    const p = document.createElement("p");
-    p.textContent = char["name"]; // display name
-    img.src = char["image"]; // display image
-    li.classList.add("photo-img"); // add class name
-    ul.appendChild(li);
-    li.appendChild(img);
-    li.appendChild(p);
-  });
-};
-
-const eachCharacter = (res, event) => {
-  debugger;
-  const selection = event.target.parentElement.innerText;
-  res.results.forEach((char) => {
-    if (selection === char.name) {
-      name.textContent = char.name;
-      picture.src = char.image;
-      charStatus.textContent = char.status;
-      charLocation.textContent = char.location.name;
-    }
-  });
-};
-
-const getComments = (event) => {
-  fetch("https://rickandmortyapi.com/api/character?page=1")
-    .then((res) => {
-      if (!res.ok) {
-        throw Error(`Girrrl ya wrong! ${res.status}`);
-      }
-      return res.json();
-    })
-    .then((res) => {
-      displayAllCharacters(res);
-
-      ul.addEventListener("click", (event) => {
-        eachCharacter(res, event);
-      });
-    })
-    .catch((err) => {
-      console.log(err);
+      img.src = character.image;
+      img.value = character.id;
+      p.innerText = character.name;
+      li.appendChild(img);
+      li.appendChild(p);
+      allCharacters.appendChild(li);
     });
+  } catch (err) {
+    console.log(err);
+  }
 };
 
-getComments();
+getAllCharacters();
 
-// Vanessa ///////////
-
-// const chosenCharacter = e.target.parentElement.innerText;
-// res.data.results.forEach((el) => {
-//   if (el.name === chosenCharacter) {
-//     debugger;
-//     characterHeader.textContent = el.name;
-//     characterImage.src = el.image;
-//     characterStatus.textContent = el.status;
-//     characterLocation.textContent = el.location.name;
-//   }
-// });
+allCharacters.addEventListener("click", async (e) => {
+  main.style.display = "flex";
+  debugger;
+  // console.log(e.target);
+  // debugger
+  const url = `https://rickandmortyapi.com/api/character/${e.target.value}`;
+  const res = await axios.get(url);
+  name.innerText = res.data.name;
+  image.src = res.data.image;
+  status.innerHTML = `<b>Status</b>${res.data.status}`;
+  place.innerHTML = `<b>Location</b>${res.data.location.name}`;
+  title.innerText = res.data.name;
+});
