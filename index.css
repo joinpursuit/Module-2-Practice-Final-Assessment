@@ -1,0 +1,14 @@
+header{
+    background-color: green;
+    display: flex;
+    justify-content: space-around
+}
+header > img{
+    width: 50px;
+    height: 50px;
+}
+#characters-list{
+    display: flex;
+    overflow: scroll;
+}
+
