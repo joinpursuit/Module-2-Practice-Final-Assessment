@@ -51,11 +51,11 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 				const location = charactersInfo.data.results[0].location.name;
 
 				// display name
-				nameH3 = document.createElement("h3");
+				const nameH3 = document.createElement("h3");
 				nameH3.textContent = selectedPicName;
 				main.appendChild(nameH3);
 				// display image
-				image = document.createElement("img");
+				const image = document.createElement("img");
 				image.src = selectedPic;
 				main.appendChild(image);
 
