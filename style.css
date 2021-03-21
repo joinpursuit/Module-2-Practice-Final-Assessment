@@ -70,5 +70,6 @@ input[type="text"] {
 
 #character-comments-ul {
     order:3;
+    flex-direction: column;
 }
 

@@ -76,11 +76,12 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 					const comment = userInput.value;
 					// create li and give input.value
 					li = document.createElement("li");
-					li.textContent = `${selectedPicName}: comment`;
+					li.innerHTML = `<b>${selectedPicName}:</b> ${comment}`;
 					// append li  to the ul
 					commentUl.appendChild(li);
 
 					// input clears
+					userInput.value = "";
 				});
 			} catch (err) {
 				console.log(err);
