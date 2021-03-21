@@ -36,7 +36,15 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 		});
 
 		// listen for the click on the image
-		// change main to visibility: visible
+        ul.addEventListener("click", (e) => {
+            // e.target give us the img url
+            const selectedPic = e.target;
+            // e.target.nextElementSibling gives us the p tag
+            const selectedPicName = e.target.nextElementSibling.textContent;
+            // change main to visibility: visible
+            
+            debugger
+        })
 		// display name
 		// display image
 		// display status
