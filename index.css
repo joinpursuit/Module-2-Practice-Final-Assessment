@@ -24,12 +24,15 @@ header > img {
     margin: auto;
     list-style-type: none;
     overflow-x: scroll;
+    text-align: center;
 }
 
 main {
     border: white solid 1px;
     width: 70%;
     margin: auto;
+    display: flex;
+    justify-content: space-around;
 }
 
 
