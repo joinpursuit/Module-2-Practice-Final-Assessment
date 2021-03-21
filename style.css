@@ -15,7 +15,7 @@ header {
 	width: 70%;
 	height: 150px;
 	margin-bottom: 20px;
-    font-family: fantasy;
+	font-family: fantasy;
 }
 header h1 {
 	font-size: 65px;
@@ -26,26 +26,24 @@ header img {
 }
 
 main {
-    height: 800px;
+	height: 800px;
 	width: 70%;
 	display: flex;
-    flex-direction: column;
+	flex-direction: column;
 	align-items: center;
 	justify-content: start;
-    /* display: none; */
-    /* visibility: hidden; */
-    background-color: red;
-    border: 6px solid white;
-    color: white;
-    font-size: 1.6rem;
-    
+	visibility: hidden;
+	background-color: red;
+	border: 6px solid white;
+	color: white;
+	font-size: 1.6rem;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    order: 2;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	order: 2;
 }
 
 p {
@@ -53,14 +51,24 @@ p {
 }
 
 section {
-    width: 70%;
+	width: 70%;
 }
 
 ul {
 	display: flex;
 	overflow: auto;
 	white-space: nowrap;
-}input[type="text"] {
-    width: 280px;
+}
+
+ul li {
+	list-style: none;
+}
+
+input[type="text"] {
+	width: 280px;
+}
+
+#character-comments-ul {
+    order:3;
 }
 

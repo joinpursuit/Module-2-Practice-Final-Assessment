@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 		const title = document.querySelector("title");
 		const main = document.querySelector("main");
 		const form = document.querySelector("form");
-		const input = document.querySelector("#user-text");
+		const userInput = document.querySelector("#user-text");
+		const commentUl = document.querySelector("#character-comments-ul");
 
 		// loop the characters to get data for each
 		characters.data.results.forEach((character) => {
@@ -18,6 +19,8 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 			// image
 			const img = document.createElement("img");
 			img.src = character.image;
+			// can add the value to the image as well
+			img.value = character.id;
 			li.appendChild(img);
 			// name
 			const p = document.createElement("p");
@@ -34,9 +37,11 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 			// e.target.nextElementSibling gives us the p tag
 			const selectedPicName = e.target.nextElementSibling.textContent;
 			// update title
-			title.textContent = `Szechuan Sauce ${selectedPicName}`;
-			// get character info
+			title.textContent = `${selectedPicName}`;
+			// display main
+			main.style.visibility = "visible";
 
+			// get character info
 			try {
 				const charactersInfo = await axios.get(
 					`https://rickandmortyapi.com/api/character/?name=${selectedPicName}`
@@ -56,35 +61,31 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 
 				// display status
 				const pStatus = document.createElement("p");
-				pStatus.textContent = `Status: ${status}`;
+				pStatus.innerHTML = `<b>Status:</b> ${status}`;
 				main.appendChild(pStatus);
 				// display location
 				const pLocation = document.createElement("p");
-				pLocation.textContent = `Location: ${location}`;
+				pLocation.innerHTML = `<b>Location:</b> ${location}`;
 				main.appendChild(pLocation);
 				// question
 
-				// check visiblility for hidden or visible
-				// getting an empty string as the value when uncommented
-				if (main.style.visibility === "hidden") {
-					main.style.visibility === "visible";
-				}
+				// listen to the submit on the form
+				form.addEventListener("submit", (e) => {
+					e.preventDefault();
+					// get the input.value
+					const comment = userInput.value;
+					// create li and give input.value
+					li = document.createElement("li");
+					li.textContent = `${selectedPicName}: comment`;
+					// append li  to the ul
+					commentUl.appendChild(li);
 
-				// listen to the submit on the form 
-                form.addEventListener("submit", (e) => {
-
-                })
-				// get the input.value
-				// create ul
-				// create li and give input.value
-				// append li  to the ul
-				// input clears
+					// input clears
+				});
 			} catch (err) {
 				console.log(err);
 			}
 		});
-
-		
 	} catch (err) {
 		console.log(err);
 	}
