@@ -11,10 +11,12 @@ fetch("https://rickandmortyapi.com/api/character?page=1")
       const ul = document.querySelector("ul");
       const li = document.createElement("li");
       const img = document.createElement("img");
-      li.textContent = char["name"]; // display name
+      const p = document.createElement("p");
+      p.textContent = char["name"]; // display name
       img.src = char["image"]; // display image
       ul.appendChild(li);
       li.appendChild(img);
+      li.appendChild(p);
     });
   })
   .catch((err) => {

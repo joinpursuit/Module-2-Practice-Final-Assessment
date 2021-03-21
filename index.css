@@ -5,7 +5,10 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    width: 70%;
     height: 150px;
     background-color: rgb(0, 128, 0);
     font-family: fantasy;
@@ -15,13 +18,18 @@ header > img {
     height: 100px;
 }
 
-ul {
+#all-characters {
     display: flex;
-    
+    width: 67%;
+    margin: auto;
     list-style-type: none;
+    overflow-x: scroll;
 }
 
 main {
     border: white solid 1px;
+    width: 70%;
+    margin: auto;
 }
+
 
