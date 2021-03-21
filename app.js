@@ -1,22 +1,12 @@
-//  **** N O T E S ****
-// https://rickandmortyapi.com/api
-// {
-//   "characters": "https://rickandmortyapi.com/api/character",
-//   "locations": "https://rickandmortyapi.com/api/location"
-// }
-
-// https://www.educative.io/edpresso/how-to-add-an-id-to-element-in-javascript
-// ASSIGN AN ID ==> TAG/VARIABLE.setAttribute(‘id’,‘ID-NAME’);
-// ADD MULTIPLE ATTRIBUTES ==> TAG/VARIABLE.setAttribute(‘class’, ‘CLASS-NAME’);
-
-// get all the characters from the first page of the API as soon s the page loads ==> DOMContentLoaded
+// get all the characters from the first page of the API as soon ss the page loads ==> DOMContentLoaded
 document.addEventListener("DOMContentLoaded", async (e) => {
 	try {
 		const characters = await axios.get(
 			"https://rickandmortyapi.com/api/character"
-			// "https://rickandmortyapi.com/api/character/?page=1"
 		);
 		const ul = document.querySelector("ul");
+		const title = document.querySelector("title");
+		const main = document.querySelector("main");
 
 		// loop the characters to get data for each
 		characters.data.results.forEach((character) => {
@@ -36,20 +26,53 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 		});
 
 		// listen for the click on the image
-        ul.addEventListener("click", (e) => {
-            // e.target give us the img url
-            const selectedPic = e.target;
-            // e.target.nextElementSibling gives us the p tag
-            const selectedPicName = e.target.nextElementSibling.textContent;
-            // change main to visibility: visible
-            
-            debugger
-        })
-		// display name
-		// display image
-		// display status
-		// display location
-		// question
+		ul.addEventListener("click", async (e) => {
+			// e.target give us the img url
+			const selectedPic = e.target;
+			// e.target.nextElementSibling gives us the p tag
+			const selectedPicName = e.target.nextElementSibling.textContent;
+			// update title
+			title.textContent = `Szechuan Sauce ${selectedPicName}`;
+			// get character info
+
+			try {
+				const charactersInfo = await axios.get(
+					`https://rickandmortyapi.com/api/character/?name=${selectedPicName}`
+				);
+				// const image = charactersInfo.data.
+				const status = charactersInfo.data.results[0].status;
+				const location = charactersInfo.data.results[0].location.name;
+				
+				// display name
+				nameH3 = document.createElement("h3");
+				nameH3.textContent = selectedPicName;
+				main.appendChild(nameH3);
+				// display image
+				image = document.createElement("img");
+				image.src = e.target.src;
+                main.appendChild(image);
+               
+				// display status
+				const pStatus = document.createElement("p");
+				pStatus.textContent = `Status: ${status}`;
+				main.appendChild(pStatus);
+				// display location
+				const pLocation = document.createElement("p");
+				pLocation.textContent = `Location: ${location}`;
+				main.appendChild(pLocation);
+				// question
+                debugger
+                
+			} catch (err) {
+				console.log(err);
+			}
+
+			// check visiblility for hidden or visible
+
+			if (main.style.visibility === "hidden") {
+				main.style.visibility === "visible";
+			}
+		});
 
 		// listen to the submit
 		// get the input.value
@@ -61,3 +84,14 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 		console.log(err);
 	}
 });
+
+//  **** N O T E S ****
+// https://rickandmortyapi.com/api
+// {
+//   "characters": "https://rickandmortyapi.com/api/character",
+//   "locations": "https://rickandmortyapi.com/api/location"
+// }
+
+// https://www.educative.io/edpresso/how-to-add-an-id-to-element-in-javascript
+// ASSIGN AN ID ==> TAG/VARIABLE.setAttribute(‘id’,‘ID-NAME’);
+// ADD MULTIPLE ATTRIBUTES ==> TAG/VARIABLE.setAttribute(‘class’, ‘CLASS-NAME’);
