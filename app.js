@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 		const ul = document.querySelector("ul");
 		const title = document.querySelector("title");
 		const main = document.querySelector("main");
+		const form = document.querySelector("form");
+		const input = document.querySelector("#user-text");
 
 		// loop the characters to get data for each
 		characters.data.results.forEach((character) => {
@@ -28,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 		// listen for the click on the image
 		ul.addEventListener("click", async (e) => {
 			// e.target give us the img url
-			const selectedPic = e.target;
+			const selectedPic = e.target.src;
 			// e.target.nextElementSibling gives us the p tag
 			const selectedPicName = e.target.nextElementSibling.textContent;
 			// update title
@@ -42,16 +44,16 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 				// const image = charactersInfo.data.
 				const status = charactersInfo.data.results[0].status;
 				const location = charactersInfo.data.results[0].location.name;
-				
+
 				// display name
 				nameH3 = document.createElement("h3");
 				nameH3.textContent = selectedPicName;
 				main.appendChild(nameH3);
 				// display image
 				image = document.createElement("img");
-				image.src = e.target.src;
-                main.appendChild(image);
-               
+				image.src = selectedPic;
+				main.appendChild(image);
+
 				// display status
 				const pStatus = document.createElement("p");
 				pStatus.textContent = `Status: ${status}`;
@@ -61,25 +63,28 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 				pLocation.textContent = `Location: ${location}`;
 				main.appendChild(pLocation);
 				// question
-                debugger
-                
+
+				// check visiblility for hidden or visible
+				// getting an empty string as the value when uncommented
+				if (main.style.visibility === "hidden") {
+					main.style.visibility === "visible";
+				}
+
+				// listen to the submit on the form 
+                form.addEventListener("submit", (e) => {
+
+                })
+				// get the input.value
+				// create ul
+				// create li and give input.value
+				// append li  to the ul
+				// input clears
 			} catch (err) {
 				console.log(err);
 			}
-
-			// check visiblility for hidden or visible
-
-			if (main.style.visibility === "hidden") {
-				main.style.visibility === "visible";
-			}
 		});
 
-		// listen to the submit
-		// get the input.value
-		// create ul
-		// create li and give input.value
-		// append li  to the ul
-		// input clears
+		
 	} catch (err) {
 		console.log(err);
 	}
