@@ -34,8 +34,21 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 			li.appendChild(p);
 			ul.appendChild(li);
 		});
-		// status
-		// location
+
+		// listen for the click on the image
+		// change main to visibility: visible
+		// display name
+		// display image
+		// display status
+		// display location
+		// question
+
+		// listen to the submit
+		// get the input.value
+		// create ul
+		// create li and give input.value
+		// append li  to the ul
+		// input clears
 	} catch (err) {
 		console.log(err);
 	}
