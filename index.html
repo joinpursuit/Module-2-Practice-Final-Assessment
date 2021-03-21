@@ -3,9 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>"Szechuan Sauce"</title>
     <link rel="icon" type="image/png" href="./assets/favicon.jpeg"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="index1.js" defer></script>
 </head>
 <body>
+    <header>
+        <h1>Rick & Morty</h1>
+        <img src="./../assets/rickAndMorty.png" alt="rickAndMorty">
+    </header>
+    
+    <ul id="all-characters"></ul>
+    <main>
+    <section id="character-info">
+        <h3 id="character-name"></h3>
+        <img id="character-img">
+        <p id="character-status"></p>
+        <p id="character-location"></p>
+    </section>
+    <section id="character-comments-section">
+        <form >
+            <input type="text" id="comment">
+            <input type="submit">
+        </form>
+        <ul id="character-comments-ul"></ul>
+    </section>
+</main>
+
 </body>
 </html>
