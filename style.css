@@ -1,0 +1,51 @@
+body{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    /* justify-content: space-around; */
+}
+
+header{
+    background-color: green;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    height: 150px;
+    margin-bottom: 20px;
+    padding: 0 30px;
+}
+header > #rickAndMorty{
+    height: 100px;
+}
+h1{
+    font-family: fantasy;
+}
+
+/* #photo-img{
+    list-style: none;
+} */
+/* .char{
+    height: 60px;
+    
+} */
+
+
+main{
+    display: none;
+    border: 5px solid white;
+    width: 70%;
+}
+input[type="text"]{
+    width: 380px;
+}
+
+#all-characters{
+    display: flex;
+    list-style: none;
+    width: 70%;
+    padding: 0;
+    margin: 0;
+    overflow-x: scroll;
+}
