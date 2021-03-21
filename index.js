@@ -6,6 +6,7 @@ const mainTag = document.createElement("main")
 const body = document.querySelector("body")
 body.appendChild(mainTag)
 
+
 const charInfo = document.createElement("section")
 charInfo.setAttribute("id", "character-info")
 mainTag.appendChild(charInfo)
@@ -30,15 +31,15 @@ charCommentSec.appendChild(form)
 // ul.setAttribute("id", "character-comments-ul")
 // charCommentSec.appendChild(ul)
 
-debugger
+// debugger
 fetch("https://rickandmortyapi.com/api/character")
 .then((res) => {
-    debugger
+    // debugger
     if(!res.ok) throw Error(`Something smells fishy!" ${res.status}`);
     return res.json();
 })
 .then((res) => {
-    debugger
+    // debugger
     res.results.forEach((person) => {
         const ul = document.querySelector("#all-characters")
         const li = document.createElement("li")
@@ -48,5 +49,12 @@ fetch("https://rickandmortyapi.com/api/character")
         ul.appendChild(li)
         ul.appendChild(img)
     })
-
 })
+
+
+
+// li.addEventListener("click", () => {
+//     const mainTag = document.createElement("main")
+// const body = document.querySelector("body")
+// body.appendChild(mainTag)
+// }

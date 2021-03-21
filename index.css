@@ -17,3 +17,13 @@ h1 {
 img {
     height: 100px;
 }
+
+#all-characters {
+    display: flex;
+}
+
+li {
+    color: white;
+    list-style: none;
+    overflow-x: scroll;
+}
