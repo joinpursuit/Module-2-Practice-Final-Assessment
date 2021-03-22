@@ -1,0 +1,107 @@
+body{
+    background-color: black;
+    color: ivory;
+}
+
+header{
+    background-color: green;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    height: 150px;
+    margin:auto;
+    margin-bottom: 20px;
+}
+
+h1{
+    font-family: fantasy;
+    font-size: 50px;
+}
+
+#RaM{
+    height: 100px;
+}
+
+#scroll{
+    width: 70%;
+    margin: auto;
+}
+
+#all-characters{
+    list-style: none;
+    display: flex;
+    overflow: auto;
+    white-space: nowrap;
+    padding: 0px;
+}
+
+#photo-img{
+    width: 150px;
+}
+
+#item{
+    width: 150px;
+    white-space: pre-line;
+    text-align: center; 
+}
+
+main{
+    border: ivory 3px solid;
+    width: 70%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-items: center;
+    text-align: center;
+
+}
+
+#img{
+    width: 100%;
+}
+
+
+#character-comments-section{
+    padding-top: 10%;
+}
+
+#input{
+    width: 70%;
+}
+
+#button{
+    width: 50%;
+}
+
+#character-comments-ul{
+    text-align: start;
+}
+
+#error{
+    color: red;
+}
+
+@media screen and (max-width: 800px){
+
+header{
+   height: max-content;
+   flex-wrap: wrap;
+}
+
+h1{
+    font-size: 200%;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+}    
+
+#img{
+    width: 70%;
+}
+
+
+
+}
