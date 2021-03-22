@@ -1,0 +1,35 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: black;
+    color: white;
+}
+ul {
+    list-style-type: none;
+}
+
+header {
+    background-color: green;
+    display: inline-block;
+    grid-row: 1;
+    margin-bottom: 20px;
+ 
+    height: 150px;
+}
+h1 {
+    font-family: fantasy;
+    color: white;   
+    width: 70%;
+    
+    /* height: 150px; */
+}
+
+header > img {
+    height: 100px;
+    float:right; 
+}
+
+
+main {
+    display: none;
+}
