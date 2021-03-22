@@ -9,12 +9,16 @@
 
 // https://rickandmortyapi.com/documentation
 
-const ul = document.querySelector("ul");
+const ul = document.querySelector("#all-characters");
 const name = document.querySelector("#name");
+const main = document.querySelector("main");
+const form = document.querySelector("form");
+const title = document.querySelector("title");
 const picture = document.querySelector("#picture");
+const userInput = document.querySelector("#user-input");
 const charStatus = document.querySelector("#status");
 const charLocation = document.querySelector("#location");
-const main = document.querySelector("main");
+const characterCommentsUl = document.querySelector("#character-comments-ul");
 
 const displayAllCharacters = (res) => {
   res.results.forEach((char) => {
@@ -29,13 +33,14 @@ const displayAllCharacters = (res) => {
     li.appendChild(p);
   });
 };
-
+// event.path[0][0].value
 const eachCharacter = (res, event) => {
   // debugger;
   main.style.display = "flex"
   const selection = event.target.parentElement.innerText;
   res.results.forEach((char) => {
     if (selection === char.name) {
+      title.textContent = char.name;
       name.textContent = char.name;
       picture.src = char.image;
       charStatus.textContent = char.status;
@@ -44,7 +49,15 @@ const eachCharacter = (res, event) => {
   });
 };
 
-const getCharacters = (event) => {
+const displayComments = (event) => {
+  event.preventDefault();
+  const li = document.createElement("li");
+  li.innerHTML= `<b>${title.textContent}:</b> ${userInput.value}`;
+  characterCommentsUl.appendChild(li);
+  userInput.value = "";
+}
+
+const getCharacters = () => {
   fetch("https://rickandmortyapi.com/api/character?page=1")
     .then((res) => {
       if (!res.ok) {
@@ -59,6 +72,7 @@ const getCharacters = (event) => {
       // look about creating this event listener outside
       ul.addEventListener("click", (event) => {
         eachCharacter(res, event);
+        
       });
 
     })
@@ -66,6 +80,8 @@ const getCharacters = (event) => {
       console.log(err);
     });
 };
+
+document.addEventListener("submit", displayComments);
 
 getCharacters();
 
