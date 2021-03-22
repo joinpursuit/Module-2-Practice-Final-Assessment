@@ -32,9 +32,11 @@ const displayAllCharacters = (res) => {
     li.appendChild(p);
   });
 };
+
 // event.path[0][0].value
 const eachCharacter = (res, event) => {
   // debugger;
+  // remove if statement
   main.style.display = "flex";
   const selection = event.target.parentElement.innerText;
   res.results.forEach((char) => {
@@ -55,6 +57,7 @@ const displayComments = (event) => {
   characterCommentsUl.appendChild(li);
   userInput.value = "";
 };
+
 // async - allows us to assign the results of fetch to a variable
 const getCharacters = async () => {
   // res variable has the same value as the result from .them(promise object)
@@ -62,8 +65,8 @@ const getCharacters = async () => {
     // const res = await fetch("https://rickandmortyapi.com/api/character?page=1");
     const res = await axios.get("https://rickandmortyapi.com/api/character?page=1");
     // to get json it must be assigned to a variable with await - must put await in front of json()
-    // axios skips the step of adding await to json(). it does that for us.
-   //axios
+    // axios skips the step of adding await to json()
+    // remove  axios returns json() for us
     // const data = await res.json();
 
     displayAllCharacters(res.data);
@@ -73,8 +76,9 @@ const getCharacters = async () => {
       // updated res to data
       eachCharacter(res.data, event);
     });
-  }
-  catch (err) {
+
+  } catch (err) {
+    console.log(err);
   }
 };
 
