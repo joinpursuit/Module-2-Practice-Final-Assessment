@@ -6,7 +6,6 @@
 // Use the `form`, to submit a character comment. Each comment should be a new `li` inside of
 // `character-comments-ul`, with the selected character's name (in bold) and a comment (not bold).
 
-
 // https://rickandmortyapi.com/documentation
 
 const ul = document.querySelector("#all-characters");
@@ -36,7 +35,7 @@ const displayAllCharacters = (res) => {
 // event.path[0][0].value
 const eachCharacter = (res, event) => {
   // debugger;
-  main.style.display = "flex"
+  main.style.display = "flex";
   const selection = event.target.parentElement.innerText;
   res.results.forEach((char) => {
     if (selection === char.name) {
@@ -52,34 +51,55 @@ const eachCharacter = (res, event) => {
 const displayComments = (event) => {
   event.preventDefault();
   const li = document.createElement("li");
-  li.innerHTML= `<b>${title.textContent}:</b> ${userInput.value}`;
+  li.innerHTML = `<b>${title.textContent}:</b> ${userInput.value}`;
   characterCommentsUl.appendChild(li);
   userInput.value = "";
-}
-
-const getCharacters = () => {
-  fetch("https://rickandmortyapi.com/api/character?page=1")
-    .then((res) => {
-      if (!res.ok) {
-        throw Error(`Girrrl ya wrong! ${res.status}`);
-      }
-      return res.json();
-    })
-    .then((res) => {
-      displayAllCharacters(res);
-
-
-      // look about creating this event listener outside
-      ul.addEventListener("click", (event) => {
-        eachCharacter(res, event);
-        
-      });
-
-    })
-    .catch((err) => {
-      console.log(err);
-    });
 };
+// async - allows us to assign the results of fetch to a variable
+const getCharacters = async () => {
+  // res variable has the same value as the result from .them(promise object)
+  try {
+    // const res = await fetch("https://rickandmortyapi.com/api/character?page=1");
+    const res = await axios.get("https://rickandmortyapi.com/api/character?page=1");
+    // to get json it must be assigned to a variable with await - must put await in front of json()
+    // axios skips the step of adding await to json(). it does that for us.
+   //axios
+    // const data = await res.json();
+
+    displayAllCharacters(res.data);
+
+    // look about creating this event listener outside
+    ul.addEventListener("click", (event) => {
+      // updated res to data
+      eachCharacter(res.data, event);
+    });
+  }
+  catch (err) {
+  }
+};
+
+// const getCharacters = () => {
+//   fetch("https://rickandmortyapi.com/api/character?page=1")
+//     .then((res) => {
+//       if (!res.ok) {
+//         throw Error(`Girrrl ya wrong! ${res.status}`);
+//       }
+//       return res.json();
+//     })
+//     .then((res) => {
+//       displayAllCharacters(res);
+
+//       // look about creating this event listener outside
+//       ul.addEventListener("click", (event) => {
+//         eachCharacter(res, event);
+
+//       });
+
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// };
 
 document.addEventListener("submit", displayComments);
 
