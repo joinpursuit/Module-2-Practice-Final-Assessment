@@ -63,6 +63,7 @@ commentForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const comment = document.querySelector("#user-comment");
     const li = document.createElement("li");
+    debugger
     li.classList.add("character-comments");
     li.innerHTML = `<b>${pageTitle.textContent}:</b> ${comment.value}`;
     commentHistory.appendChild(li);
