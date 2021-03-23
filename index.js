@@ -1,30 +1,58 @@
-const ul = document.querySelector("#characters-list")
+const ul = document.querySelector("#all-characters");
+const main = document.querySelector("main");
+let characterName = document.querySelector("#character-name");
+const image = document.querySelector("#character-img");
+const species = document.querySelector("#character-species");
+const place = document.querySelector("#character-location");
+const form = document.querySelector("form");
+const title = document.querySelector("title");
 // const characterId
-const loadPage = async () =>{
-    try {
-        const characters = await axios.get("https://rickandmortyapi.com/api/character")
-        characters.data.results.forEach(character => {
-            const characterElement = document.createElement("div");
-            const img = document.createElement("img")
-            const name = document.createElement("h5")
-            name.innerText = character.name
-            name.value = character.id 
-            img.src = character.image
-            img.value = character.id
-            characterElement.appendChild(img)
-            characterElement.appendChild(name)
-            characterElement.value = character.id
-            ul.appendChild(characterElement)
-        });
-    } catch (error) {
-        console.log(error);
-    }
+const loadPage = async () => {
+  try {
+    const characters = await axios.get(
+      "https://rickandmortyapi.com/api/character"
+    );
+    characters.data.results.forEach((character) => {
+      const characterElement = document.createElement("div");
+      const img = document.createElement("img");
+      const h5 = document.createElement("h5");
+      h5.innerText = character.name;
+      img.src = character.image;
+      img.value = character.id;
+      characterElement.appendChild(img);
+      characterElement.appendChild(h5);
+      characterElement.value = character.id;
+      ul.appendChild(characterElement);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-}
+loadPage();
 
-loadPage()
+ul.addEventListener("click", async (e) => {
+  const currentCharacter = await axios.get(
+    `https://rickandmortyapi.com/api/character/${e.target.value}`
+  );
+  characterName.innerText = currentCharacter.data.name;
+  characterName.value = currentCharacter.id;
+  image.src = currentCharacter.data.image;
+  title.innerText = currentCharacter.data.name
+  status.innerText = `Status: ${currentCharacter.data.status}`;
+  place.innerHTML = `Location: ${currentCharacter.data.location.name}`;
+  title.innerText = currentCharacter.data.name;
+});
 
-ul.addEventListener("click", async(e) =>{
-    const currentCaracter = await axios.get(`https://rickandmortyapi.com/api/character/${e.target.value}`)
-    console.log(currentCaracter.data.name)
-})
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const comments = document.querySelector("#character-comments-ul");
+  const li = document.createElement("li");
+  const input = document.querySelector("input[type=text]");
+  li.innerText = `${title.textContent} ${comments}`;
+  li.innerHTML = `<b>${title.textContent}:</b> ${input.value}`;
+//   debugger
+
+  comments.appendChild(li);
+  input.value = "";
+});

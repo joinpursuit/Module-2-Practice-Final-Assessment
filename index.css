@@ -1,14 +1,34 @@
+body{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
 header{
     background-color: green;
     display: flex;
-    justify-content: space-around
+    justify-content: space-between;
+    font-family: fantasy;
+    height: 150px;
+    width: 70%;
+    padding: 0 30px;
+    margin-bottom: 20px;
+}
+main{
+    display: none;
+    width: 70%;
+    display: flex;
 }
 header > img{
-    width: 50px;
-    height: 50px;
+    height: 100px;
 }
-#characters-list{
+#all-characters{
     display: flex;
-    overflow: scroll;
+    overflow-x: scroll;
+    width: 70%;
+    margin: auto;
 }
-
+input{
+    width: 380px;
+}

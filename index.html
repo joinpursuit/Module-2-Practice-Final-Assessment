@@ -7,28 +7,28 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./index.js" defer></script>
     <link rel="stylesheet" href="./index.css">
-    <title>MId module Ass</title>
+    <title>Szechuan Sauce</title>
 </head>
 <body>
     <header>
-        <h1>
-            Rick & Morty
-        </h1>
-        <img src ="./assets/rickAndMorty.png"></img>
-
+        <h1>Rick & Morty</h1>
+        <img src="./assets/rickAndMorty.png">
     </header>
-    <section id="character-list">
-        <ul id="characters-list"></ul>
-    </section>
-    <section id="display-form">
-        <section id="character-display">
-
+        <ul id="all-characters"></ul>
+    <main id="display-form">
+        <section id="character-info">
+            <h3 id="character-name"></h3>
+            <img id="character-img">
+            <p id="character-species" ></p>
+            <p id="character-location"></p>
         </section>
-        <section id="character-form">
+        <section id="character-comments-section">
             <form>
-                
+                <input type="text">
+                <input type="submit">
             </form>
+            <ul id="character-comments-ul"></ul>
         </section>
-    </section>
+    </main>
 </body>
 </html>
