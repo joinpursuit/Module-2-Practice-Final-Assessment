@@ -1,66 +1,59 @@
-    const allChar = document.getElementById('all-characters')
-
-    async function char() {
-        const result =  await axios.get("https://rickandmortyapi.com/api/character")
-        console.log(result.data.results)
-        result.data.results.forEach(el => {
-            const li2 = document.createElement('li')
-            li2.classList.add('photo')
-            const img = document.createElement('img')
-            img.classList.add('photo-img')
-            img.src = el.image
-            const ptwo = document.createElement('p') 
-            ptwo.textContent = el.name
-            li2.appendChild(img)
-            li2.appendChild(ptwo)
-            allChar.appendChild(li2) 
-        });
-
+const allCharacters = document.querySelector('#all-characters')
+document.addEventListener('DOMContentLoaded', () => {
+  async function allChar() {
+    const results = await axios.get("https://rickandmortyapi.com/api/character")
+    console.log(results.data)
+    const infoResult = results.data.results
+    for(let character of infoResult) {
+      const item = makeCharItem(character)
+      allCharacters.appendChild(item)
+      console.log(item)
     }
-    char()
+    function makeCharItem (character) {
+      const li = document.createElement('li')
+      const img = document.createElement('img')
+      img.src = character.image
+      img.classList.add('photo-img')
+      li.appendChild(img)
+      const text = document.createElement('p')
+      text.textContent = character.name
+      li.appendChild(text)
+      li.addEventListener('click', () => {
+        const main = document.querySelector('main');
+        main.style.display = "flex";
+        const name = document.querySelector('h3')
+        const img = document.getElementById('img')
+        const status = document.getElementById('first')
+        const location = document.getElementById('second')
+        const title = document.querySelector('title')
+        title.textContent = character.name
+        name.textContent = character.name
+        img.src = character.image
+        status.innerHTML = `<b>Status</b>: ${character.status}`
+        location.innerHTML = `<b>Location</b>: ${character.location.name}`
 
-    function caracter(all){
-        
-    }
 
-    allChar.addEventListener('click', e =>{
-        e.preventDefault()
-        fetch(`https://rickandmortyapi.com/api/character/${e.target.value}`)
-        .then((res)=>{
-            return res.json()
-        }).then((res)=>{
-            let todo = res.data
-            console.log(todo.name)
-            const main = document.querySelector("main");
-            main.style.display = "flex";
+        const form = document.querySelector("form")
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const comments = document.querySelector("#character-comments-ul");
+            const input = document.querySelector("input[type=text]")
             const title = document.querySelector("title");
-            title.textContent = res.name;
-            const name = document.querySelector('h3')
-            name.textContent = res.data.name
-            const status = document.getElementById('first')
-            status.innerHTML = `Status: ${res.status}`
-            const location = document.getElementById('second')
-            location.innerHTML = `Location: ${res.location.name}`
-            const img = document.getElementById('photo')
-            img.src = res.image
-        })
-        
-    })
-    const form = document.querySelector("form");
+            const li = document.createElement("li");
+            li.innerHTML = `<b>${title.textContent}:</b> ${input.value}`;
+            comments.appendChild(li);
+            input.value = ""
 
+          });
+      })
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const comments = document.querySelector("#character-comments-ul");
-  const input = document.querySelector("input[type=text]");
-  const title = document.querySelector("title");
-  const li = document.createElement("li");
-  li.innerHTML = `<b>${title.textContent}:</b> ${input.value}`;
-  comments.appendChild(li);
-  input.value = "";
-});
-
-
+      return li
+    }
+    
+}
+allChar();
+})
 
 
 

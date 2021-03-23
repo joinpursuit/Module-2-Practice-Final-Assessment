@@ -8,28 +8,26 @@
     <title>Szechuan Sauce</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="index.js"defer></script>
+    <script src="index.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Rick & Morty</h1>
-        <img src="assets/rickAndMorty.png" alt="" class="img">
+        <img src="/assets/rickAndMorty.png" class="img">
     </header>
     <ul id="all-characters"></ul>
     <main>
         <section id="character-info">
             <h3></h3>
-            <img id="photo">
+            <img src="" alt="" id="img">
             <p id="first"></p>
             <p id="second"></p>
         </section>
         <section id="character-comments-section">
-            <form action="">
-                <label for="">What would this character say about Jerry?</label>
-                <br>
-                <input type="text" class="text">
-                <br>
-                <button type="submit">submit</button>
+            <form action="" method="post">
+                <h2>What would this character say about Jerry?</h2>
+                <input type="text">
+                <input type="submit"></button>
             </form>
             <ul id="character-comments-ul"></ul>
         </section>
