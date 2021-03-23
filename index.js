@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             return
         }
         const li = document.createElement("li")
-        li.innerHTML = `<b>${document.getElementById("name").textContent}.</b>: ${userInput.value}`
+        li.innerHTML = `<b>${document.getElementById("name").textContent}:</b> ${userInput.value}`
         document.getElementById("character-comments-ul").append(li)
         userInput.value = ""
     })
