@@ -5,7 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/png" href="./assets/favicon.jpeg"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szechuan Sauce</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./index.js"></script>
 </head>
 <body>
+    <header>
+        <h1>Rick & Morty</h1>
+        <img id="header-img" src="./assets/rickAndMorty.png" alt="">
+    </header>
+    <ul id="all-characters"></ul>
+    <main>
+        <section id="character-info">
+        </section>
+        <section id="character-comments-section">
+            <h3>What would this character say about Jerry?</h3>
+            <form>
+                <input type="text" id="input-comment" required>
+                <input type="submit" id="form-submit">
+            </form>
+            <ul id="character-comments-ul"></ul>
+        </section>
+    </main>
 </body>
 </html>
