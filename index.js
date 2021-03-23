@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", async () => {
                 h3.id = "name"
                 h3.textContent = char.name
                 img1.src = char.image
-                p1.innerHTML = `<b>Status</b>: ${char.status}`
-                p2.innerHTML = `<b>Location</b>: ${char.location.name}`
+                p1.innerHTML = `<b>Status:</b> ${char.status}`
+                p2.innerHTML = `<b>Location:</b> ${char.location.name}`
                 section.innerHTML = ""
                 section.append(h3, img1, p1, p2)
             })
