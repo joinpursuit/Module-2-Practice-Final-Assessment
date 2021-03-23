@@ -1,0 +1,29 @@
+body {
+    background-color: black;
+}
+
+
+    header {
+    background-color: green;
+    width: 70%;
+    height: 150px;
+}
+
+h1 {
+   font-family: fantasy;
+   color: black;
+}
+
+img {
+    height: 100px;
+}
+
+#all-characters {
+    display: flex;
+}
+
+li {
+    color: white;
+    list-style: none;
+    overflow-x: scroll;
+}
