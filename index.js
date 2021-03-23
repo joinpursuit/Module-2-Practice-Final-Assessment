@@ -6,7 +6,6 @@ const species = document.querySelector("#character-species");
 const place = document.querySelector("#character-location");
 const form = document.querySelector("form");
 const title = document.querySelector("title");
-// const characterId
 const loadPage = async () => {
   try {
     const characters = await axios.get(
@@ -19,19 +18,19 @@ const loadPage = async () => {
       h5.innerText = character.name;
       img.src = character.image;
       img.value = character.id;
+      h5.value = character.id;
       characterElement.appendChild(img);
       characterElement.appendChild(h5);
-      characterElement.value = character.id;
       ul.appendChild(characterElement);
     });
   } catch (error) {
     console.log(error);
   }
 };
-
 loadPage();
 
 ul.addEventListener("click", async (e) => {
+
   const currentCharacter = await axios.get(
     `https://rickandmortyapi.com/api/character/${e.target.value}`
   );

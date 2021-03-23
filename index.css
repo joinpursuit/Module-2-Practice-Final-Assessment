@@ -25,7 +25,7 @@ header > img{
 }
 #all-characters{
     display: flex;
-    overflow-x: scroll;
+    overflow:scroll;
     width: 70%;
     margin: auto;
 }
