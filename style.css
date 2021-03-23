@@ -1,0 +1,56 @@
+body{
+    background-color: black;
+}
+header{
+    display: flex;
+    background-color: green;
+}
+h1{
+    font-family: fantasy;
+    margin-left: 20%;
+    color: white;
+}
+.img{
+    margin-top: 20px;
+    height: 50px;  
+    margin-left: auto;
+    margin-right: 25%;
+}
+#all-characters{
+  border: 1px;  
+  background-color: aqua;
+  height: 90px;
+}
+li{
+    color: white;
+    list-style: none;
+}
+main{   
+    border: 3px solid white;  
+    height: 250px;
+
+    color: white;
+}
+#character-info{
+ margin-left: 20px;
+}
+#character-comments-section{
+    float: right; 
+}
+.text{
+    margin-top: 5px;
+    width: 350px;
+    margin-right: 60px;
+}
+button{
+ margin-left: 140px;
+ font-size: 15px;
+}
+.ul2{
+    color: white;
+}
+label{
+    margin-top: 0px;
+    color: white;
+    font-size: 20px;
+}
