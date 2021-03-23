@@ -39,7 +39,7 @@ ul.addEventListener("click", async (e) => {
   characterName.value = currentCharacter.id;
   image.src = currentCharacter.data.image;
   title.innerText = currentCharacter.data.name
-  status.innerText = `Status: ${currentCharacter.data.status}`;
+  species.innerHTML = `Status: ${currentCharacter.data.status}`;
   place.innerHTML = `Location: ${currentCharacter.data.location.name}`;
   title.innerText = currentCharacter.data.name;
 });
@@ -51,8 +51,6 @@ form.addEventListener("submit", (e) => {
   const input = document.querySelector("input[type=text]");
   li.innerText = `${title.textContent} ${comments}`;
   li.innerHTML = `<b>${title.textContent}:</b> ${input.value}`;
-//   debugger
-
   comments.appendChild(li);
   input.value = "";
 });
