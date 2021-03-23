@@ -30,6 +30,11 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 			ul.appendChild(li);
 		});
 
+		const image = document.createElement("img");
+		const nameH3 = document.createElement("h3");
+		const pStatus = document.createElement("p");
+		const pLocation = document.createElement("p");
+		
 		// listen for the click on the image
 		ul.addEventListener("click", async (e) => {
 			// e.target give us the img url
@@ -41,6 +46,7 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 			// display main
 			main.style.visibility = "visible";
 
+			
 			// get character info
 			try {
 				const charactersInfo = await axios.get(
@@ -51,20 +57,16 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 				const location = charactersInfo.data.results[0].location.name;
 
 				// display name
-				const nameH3 = document.createElement("h3");
 				nameH3.textContent = selectedPicName;
 				main.appendChild(nameH3);
 				// display image
-				const image = document.createElement("img");
 				image.src = selectedPic;
 				main.appendChild(image);
 
 				// display status
-				const pStatus = document.createElement("p");
 				pStatus.innerHTML = `<b>Status:</b> ${status}`;
 				main.appendChild(pStatus);
 				// display location
-				const pLocation = document.createElement("p");
 				pLocation.innerHTML = `<b>Location:</b> ${location}`;
 				main.appendChild(pLocation);
 				// question
