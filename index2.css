@@ -1,0 +1,85 @@
+ body {
+  border-style: solid;
+  background-color: black;
+} 
+
+header {
+  background-color: rgb(0, 128, 0);
+  height: 150px;
+  font-family: fantasy;
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  justify-content: space-around;
+  /* border-style: solid; */
+}
+
+
+h1 {
+  padding-left: 125px;
+  margin-left: 125px;
+  padding-top: 20px;
+  color: white;
+  font-size: 36px;
+  /* border-style: solid; */
+}
+
+#photo-slider-div {
+  margin-left: 10%;
+  margin-right: 10%; 
+  padding: none;
+  /* height: auto; */
+  /* line-height: 50px; */
+  background-color: black;
+  color: Black;
+  /* overflow:auto; */
+  /* padding: 0.5rem; */
+  overflow-x: scroll; 
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  
+}
+#all-characters {
+    display: flex;
+    margin-left: none;
+    padding-left: none;
+    padding: none;
+    color: white;
+    text-align: center;
+    list-style-type: none;
+}
+
+.slide {
+    margin: none;
+    padding: none;
+    /* flex-shrink: 0; */
+    /* height: 100%;  */
+}
+
+#header-image > img {
+    height: 100px;
+}
+.photo-img {
+  padding: none;
+  margin: none;
+  /* object-fit: cover; */
+  ;
+  
+}
+
+main {
+    border-style: solid;
+    border-color: white;
+    display: flex;
+    margin-top: 20px;
+    
+}
+
+#character-info {
+    border-style: solid;
+}
+
+
+/* div {
+  border-style: solid;
+} */
