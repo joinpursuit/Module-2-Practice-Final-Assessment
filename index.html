@@ -5,7 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/png" href="./assets/favicon.jpeg"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szechuan Sauce</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./ricknmorty.js" defer></script>   
 </head>
+
+<header id="rnm-header">
+    <h1 id="header-type">Rick & Morty</h1>
+    <img src="./assets/rickAndMorty.png" id="rnm-img" alt="Image of Rick & Morty">
+</header>
+
+<ul id="all-characters">
+</ul>
+
+<main>
+    <section id="character-info">
+        <h3 id="character-header"></h3>
+        <img src="" id="character-img" alt="">
+        <p id="character-status"></p>
+        <p id="character-location"></p>
+    </section>
+    <section id="character-comments-section">
+        <form action="" id="comment-form">
+            <label for="user-comment">What would this character say about Jerry?</label>
+            <br><input type="text" id="user-comment" required/>
+            <br><input type="submit" id="comment-submit" value="Comment"/>
+        </form>
+        <ul id="character-comments-ul"></ul>
+    </section>
+</main>
+
 <body>
 </body>
 </html>
+
+<!-- This **burp** app should have (in order of placement in the HTML):
+- A title tag that starts with the text "Szechuan Sauce"
+- A header tag. Make it mean and make it green. 
+- Inside the header an `h1` that reads "Rick & Morty" with fantasy font.
+- Inside the header an image of Rick and Morty (check your assets folder!)
+
+- A `ul` with the id `all-characters` that contains an `li`'s with an image (id=`photo-img`) of each character in the API (first page only), as well as the characters name.
+- A `main` tag that starts not on the page
+- Inside of `main` should be two sections. The first section should have the id `character-info` the second should have the id `character-comments-section`.
+- Inside of `character-info` should be be an `h3` an `img` and two `p` tags. 
+- Inside of `character-comments-section` should be a `form`, including a "text" `input` and a "submit" `input`, that allows users to submit (not save, just add to the frontend) what they would say about the character Jerry. On submission the input should clear.
+- Also insider `character-comments-section`  should be a `ul` with the id `character-comments-ul` that contains the submitted comments of each character.
+
+Please feel free to include additional `section`s and elements if they make styling the **burp** app easier. -->
