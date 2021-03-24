@@ -1,5 +1,19 @@
 const allCharacters = document.querySelector('#all-characters')
+const comments = document.querySelector("#character-comments-ul");
+const form = document.querySelector("form")
 document.addEventListener('DOMContentLoaded', () => {
+ 
+  form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const input = document.querySelector("input[type=text]")
+      const title = document.querySelector("title").textContent
+      const li = document.createElement("li");
+      li.innerHTML = `<b>${title}:</b> ${input.value}`;
+      comments.appendChild(li);
+      form.reset()
+
+    });
+
   async function allChar() {
     const results = await axios.get("https://rickandmortyapi.com/api/character")
     console.log(results.data)
@@ -33,19 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         location.innerHTML = `<b>Location</b>: ${character.location.name}`
 
 
-        const form = document.querySelector("form")
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-
-            const comments = document.querySelector("#character-comments-ul");
-            const input = document.querySelector("input[type=text]")
-            const title = document.querySelector("title");
-            const li = document.createElement("li");
-            li.innerHTML = `<b>${title.textContent}:</b> ${input.value}`;
-            comments.appendChild(li);
-            input.value = ""
-
-          });
+        
       })
 
       return li
