@@ -1,0 +1,43 @@
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column; 
+    /* main axis is the column */
+    align-items: center;
+    color: white;
+}
+
+header {
+    background-color: green;
+    font-family: fantasy;
+    width: 70%;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+    margin-bottom: 20px;
+}
+
+header > img {
+    height: 100px;
+}
+#all-characters{
+    display: flex;
+    list-style: none;
+    width: 90%;
+    padding: 0;
+    margin: 0;
+    overflow-x: scroll;
+}
+
+main {
+    display: none;
+    width: 70%;
+    border: 5px solid white;
+}
+
+
+
+input[type="text"]{
+    width: 380px;
+}
