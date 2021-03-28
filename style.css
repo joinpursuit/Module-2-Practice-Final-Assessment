@@ -20,10 +20,11 @@ header {
 header h1 {
   color: white;
   font-size: 65px;
+  font-family: fantasy;
 }
 
 header img {
-  height: 140px;
+  height: 100px;
 }
 
 main {
@@ -31,7 +32,7 @@ main {
   display: flex;
   align-items: center;
   flex-direction: row;
-  visibility: hidden;
+  /* visibility: hidden; */
   background-color: red;
   border: 6px solid white;
   flex-direction: column;
@@ -52,4 +53,18 @@ ul {
   display: flex;
   overflow: auto;
   white-space: nowrap;
+  list-style: none;
+}
+
+input[type="text"] {
+  width: 380px;
+}
+
+#allCharacters {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 70%;
+  overflow-x: scroll;
 }
