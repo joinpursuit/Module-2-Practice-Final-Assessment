@@ -46,6 +46,7 @@ const comments = document.querySelector("#character-comments-ul");
 const getAllCharacters = async () => {
   try {
     const res = await axios.get(`https://rickandmortyapi.com/api/character`);
+    debugger;
     res.data.results.forEach((char) => {
       const li = document.createElement("li");
       const img = document.createElement("img");
@@ -79,7 +80,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   const comment = document.querySelector("#comment");
   const li = document.createElement("li");
-  li.innerHTML = `<b>${title.textContent}:</b> ${comment.value}`;
+  li.innerHTML = `<b>${title.textContent}:</b>  ${comment.value}`;
   comments.appendChild(li);
   comments.value = "";
 });
