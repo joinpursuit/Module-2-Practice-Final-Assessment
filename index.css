@@ -22,7 +22,7 @@ header > img {
 body {
     display: flex;
     background-color: black;
-    flex-direction: center;
+    flex-direction: column;
     align-items: center;
     color: white;
 }
