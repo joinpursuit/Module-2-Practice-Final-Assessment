@@ -19,7 +19,7 @@ const getAllCharacters = async () => {
       // console.log(character);
 
       img.src = character.image;
-      img.value = character.id;
+      img.value = character.id; // set id to each character to reference laterx
       p.innerText = character.name;
       li.appendChild(img);
       li.appendChild(p);
